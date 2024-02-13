@@ -29,7 +29,7 @@ class Email{
         
             //Recipients
             $mail->setFrom('luisagalazmp@galazcode.com', 'Mailer');
-            $mail->addAddress('luisagalazmp@galazcode.com', 'galazcode.com');     //Add a recipient 
+            $mail->addAddress('luisagalazmp@gmail.com', 'galazcode.com');     //Add a recipient 
             //Content
             $mail->isHTML(true);      
             $mail->CharSet = 'UTF-8';                            //Set email format to HTML
@@ -60,7 +60,7 @@ class Email{
         
             //Recipients
             $mail->setFrom('luisagalazmp@galazcode.com', 'Mailer');
-            $mail->addAddress('luisagalazmp@galazcode.com', 'galazcode.com');     //Add a recipient 
+            $mail->addAddress('luisagalazmp@gmail.com', 'galazcode.com');     //Add a recipient 
             //Content
             $mail->isHTML(true);      
             $mail->CharSet = 'UTF-8';                            //Set email format to HTML

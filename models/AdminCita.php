@@ -32,8 +32,5 @@ class AdminCita extends ActiveRecord{
         $this->servicio=$args["servicio"]??'';
         $this->precio=$args["precio"]??0;
     }
-    
-    public function sincronizarId(){
-        $this->id=$this->id_admin_cita;
-    }
+
 }

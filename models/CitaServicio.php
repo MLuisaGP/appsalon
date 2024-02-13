@@ -20,7 +20,4 @@ class CitaServicio extends ActiveRecord{
             $this->id_cita=$args["id_cita"]??'';
             $this->id_servicio=$args["id_servicio"]??'';
         }
-        public function sincronizarId(){
-            $this->id=$this->id_citasservicio;
-        }
 }
