@@ -1,0 +1,29 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.tabs{
+    @include mix.tablet {
+        display: flex;
+    }
+    button{
+        background-color: var.$azul;
+        border: none;
+        color: var.$blanco;
+        padding: 1rem;
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        font-weight: var.$bold;
+        transition: background-color 300ms ease;
+        &:hover{
+            cursor: pointer;
+            background-color: darken($color: var.$azul, $amount: 10%);
+            
+        }
+        &.actual{
+            background-color: var.$blanco;
+            color: var.$azul;
+        }
+    }
+}

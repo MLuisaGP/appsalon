@@ -1,0 +1,16 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+.acciones{
+    margin-top: var.$separacion;
+    @include mix.desktopXL {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    a{
+        color: var.$blanco;
+        display: block;
+        margin-bottom: calc(var.$separacion/2);
+        text-align: center;
+    }
+}

@@ -1,0 +1,49 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.contenedor-app{
+    @include mix.tablet {
+       @include mix.grid(2,1rem);
+       height: 100%;
+    }
+    .imagen{
+        height: 20rem;
+        background-image: url(../img/1.jpg);
+        background-size: cover;
+        background-position: center center;
+        @include mix.tablet {
+            height: auto;
+        }
+    }
+    .app{
+        width: 95%;
+        margin: 0 auto;
+        padding: 1rem;
+        @include mix.tablet {
+            overflow: scroll;
+        }
+    }
+}
+.barra{
+    // margin-bottom: 7rem;
+    margin: var.$separacion 0;
+    @include mix.tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center
+    }
+    .boton{
+        @include mix.boton(var.$negro, var.$blanco);
+        margin: 0;
+    }
+}
+.barra-servicios{
+    margin-bottom: var.$separacion;
+    @include mix.desktop {
+        display: flex;
+        justify-content: space-between;
+    }
+    .boton{
+        margin: 0 0 1rem 0;
+    }
+}

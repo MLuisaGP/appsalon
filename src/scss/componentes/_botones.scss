@@ -1,0 +1,9 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.boton{
+    @include mix.boton(var.$azul, var.$blanco);
+}
+.boton-eliminar{
+    @include mix.boton(var.$rojo, var.$blanco);
+}

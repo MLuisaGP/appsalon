@@ -1,0 +1,26 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+.formulario{
+    margin-top: var.$separacion;
+    width: 100%;
+}
+.campo{
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+    label{
+        flex: 0 0 10rem; //?se le da un ancho fijo a los labels para alinearlos
+    }
+    input{
+        flex: 1; //?Los inputs tomaran el resto del espacio
+        // all: unset; //?quita todo el css de los inputs
+        border: none;
+        padding: calc(var.$separacion/5);
+        border-radius: 1rem;
+        &:disabled{
+            background-color: lighten($color: var.$negro, $amount: 30%);
+            color: var.$blanco;
+            cursor: not-allowed;
+        }
+    }
+}

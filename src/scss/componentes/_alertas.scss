@@ -1,0 +1,21 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+.alerta{
+    padding: calc(var.$separacion/2);
+    color: var.$blanco;
+    width: 100%;
+    display: block;//garantiza que la alertas se muestren una ariba de la otra
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: var.$bold;
+    text-transform: uppercase;
+    &.error{
+        background-color: var.$rojo;
+    }
+    &.exito{
+        background-color: var.$verde;
+    }
+    &.warning{
+        background-color: var.$naranja;
+    }
+}

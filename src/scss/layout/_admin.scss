@@ -1,0 +1,36 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.citas{
+    list-style: none;
+    padding: 0;
+    li{
+        padding: 1rem;
+        border-top: 1px solid var.$blanco;
+        p{
+            font-weight: var.$bold;
+            color:var.$azul;
+        }
+        span,
+        .servicios{
+            font-weight: var.$regular;
+            color:var.$blanco;
+        }
+    }
+}
+.servicios{
+    @extend .citas;
+    .acciones{
+        margin: 0;
+    }
+    .boton,
+    .boton-eliminar{
+        margin: 0;
+    }
+    .boton-eliminar{
+        margin-top: 1rem;
+        @include mix.desktopXL{
+            margin: 0;
+        }
+    }
+}

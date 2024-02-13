@@ -1,0 +1,40 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.listado-servicios{
+    display: grid;
+    gap: 4rem;
+   padding: 4rem;
+    
+    @include mix.tablet {
+        @include mix.grid;
+        gap: 3rem;
+
+    }
+    .servicio{
+        background-color: var.$blanco;
+        padding: 3rem;
+        border-radius: 1rem;
+        transition: transform 300ms ease;
+        text-align: center;
+        &.seleccionado{
+            background-color: var.$azul;
+            p{
+                color: var.$blanco;
+            }
+        }
+        &:hover{
+            transform: scale(1.1);
+        }
+        p{
+            color: var.$negro;
+            margin: 0 0 calc(var.$separacion/4) 0 ;
+        }
+        .precio-servicio{
+            color: var.$azul;
+            font-weight: var.$bold;
+            font-size: 3rem;
+            margin: 0;
+        }
+    }
+}
