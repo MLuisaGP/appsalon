@@ -1,7 +1,8 @@
 let paso = 1;
 const pasoInicial=1;
 const pasoFinal=3;
-const api_url ='http://localhost:3000/api/'
+// const api_url =`${location.origin}/api/`
+const api_url =`/api/`
 const cita = {
     id_usuario: '',
     nombre: '',

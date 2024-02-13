@@ -21,11 +21,11 @@ class Email{
         try {
             //Server settings
             $mail->isSMTP();                                            //Send using SMTP
-            $mail->Host = 'sandbox.smtp.mailtrap.io';
+            $mail->Host = $_ENV['EMAIL_HOST'];
             $mail->SMTPAuth = true;
-            $mail->Port = 2525;
-            $mail->Username = '7b417d33314282';
-            $mail->Password = '8d10b3369b3e67';                                  //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+            $mail->Port = $_ENV['EMAIL_PORT'];
+            $mail->Username = $_ENV['EMAIL_USER'];
+            $mail->Password = $_ENV['EMAIL_PWD'];                                 //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
         
             //Recipients
             $mail->setFrom('luisagalazmp@galazcode.com', 'Mailer');
@@ -36,7 +36,7 @@ class Email{
             $mail->Subject = 'Confirma tu cuenta';
             $contenido  = "<html>";
             $contenido .="<p><strong>Hola {$this->nombre}</strong> Has creado tu cuenta en App Salon, solo debes confirmala presionando el siguiente enlace</p>";
-            $contenido .="<p>Preciona aquí:<a href='http://localhost:3000/confirmar-cuenta?token={$this->token}'>Confirmar Cuenta</a></p>";
+            $contenido .="<p>Preciona aquí:<a href='".$_ENV['APP_URL']."/confirmar-cuenta?token={$this->token}'>Confirmar Cuenta</a></p>";
             $contenido .="<p>Si tu no solicitaste esta cuenta, puedes ignorar este mensaje</p>";
             $contenido .="</html>";
             $mail->Body = $contenido;
@@ -67,7 +67,7 @@ class Email{
             $mail->Subject = 'Reestablece tu Pwd';
             $contenido  = "<html>";
             $contenido .="<p><strong>Hola {$this->nombre}</strong> Has solicitado reestablecer tu password, sigue el siguiente enlace para realizarlo:</p>";
-            $contenido .="<p>Preciona aquí:<a href='http://localhost:3000/recuperar?token={$this->token}'>Restablece contraseña</a></p>";
+            $contenido .="<p>Preciona aquí:<a href='".$_ENV['APP_URL']."/recuperar?token={$this->token}'>Restablece contraseña</a></p>";
             $contenido .="<p>Solo se podra utilizar una sola vez el token</p>";
             $contenido .="<p>Si tu no solicitaste este cambio, puedes ignorar este mensaje</p>";
             $contenido .="</html>";
